@@ -1,7 +1,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff;
-    color: #2e2f42;
+    color: #434455;
 }
 a{
     text-decoration: none;
@@ -36,6 +36,7 @@ button{
     line-height: 1.11;
     letter-spacing: 0.02em;
     text-align: center;
+    text-transform: capitalize;
     color: #2e2f42;
 }
 
@@ -91,6 +92,7 @@ button{
 }
 
 .nav-link:hover,
+.nav-link:focus,
 .nav-link:active {
     color: #404bbf;
 }
@@ -110,6 +112,7 @@ button{
 }
 
 .address-link:hover,
+.address-link:focus,
 .address-link:active {
     color: #404bbf;
 }
@@ -122,7 +125,7 @@ button{
 .hero-title {
     font-weight: 700;
     font-size: 56px;
-    line-height: 1.07143;
+    line-height: 1.07;
     letter-spacing: 0.02em;
     text-align: center;
     color: #fff;
@@ -139,6 +142,7 @@ button{
 }
 
 .hero-button:hover,
+.hero-button:focus,
 .hero-button:active {
     background: #404BBF;
 }
