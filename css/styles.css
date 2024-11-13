@@ -85,12 +85,13 @@ img {
 /* #endregion */
 
 /* #region header*/
-.header {}
+.header {
+    border-bottom: 1px solid #e7e9fc;
+}
 
 .header-container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #e7e9fc;
 }
 
 .nav {
@@ -296,17 +297,18 @@ img {
 /* #region footer*/
 .footer{
         background: #2e2f42;
+        padding: 100px 0;
 }
 .container-footer{
-    padding: 100px 0;
 }
 .logo-footer-part {
     color: #f4f4fd;
 }
-
-
+.footer-logo{
+    display: inline-block;
+    margin-bottom: 16px;
+}
 .footer-text {
-    margin-top: 16px;
     max-width: 264px;
     font-size: 16px;
     line-height: 1.5;
