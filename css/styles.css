@@ -429,9 +429,6 @@ background-color: #404bbf;
 .wrapper-footer{
     margin-right: 120px;
 }
-.footer-title-socials{
-    margin-bottom: 8px;
-}
 .footer-container{
     display: flex;
     align-items: baseline;
@@ -439,7 +436,7 @@ background-color: #404bbf;
 .footer-socials{
     display: flex;
     gap: 16px;
-    padding-left: 0
+    padding: 0;
 }
 .footer-link:hover,
 .footer-link:focus{
