@@ -459,7 +459,7 @@ background-color: #404bbf;
     z-index: 999;
     display: flex;
     justify-content: center;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     opacity: 0;
     pointer-events: none;
@@ -470,26 +470,54 @@ background-color: #404bbf;
 }
 .modal{
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     border-radius: 4px;
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    background: #fcfcfc;
+    background-color: #fcfcfc;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     padding: 24px;
     padding-top: 72px;
 }
 .btn-overlay-close{
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        background-color: #e7e9fc;
-        border: 1px rgba(0, 0, 0, 0.1);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px rgba(0, 0, 0, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    padding: 0;
+    cursor: pointer;
 }
 .btn-overlay-close:hover,
 .btn-overlay-close:focus{
     background-color: #404bbf;
+    border: none;
+}
+
+.close-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-overlay-close:hover+.close-icon,
+.btn-overlay-close:focus+.close-icon {
+    fill: #fff;
 }
 
 .overlay-title{
@@ -499,96 +527,103 @@ background-color: #404bbf;
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
+    margin-bottom: 16px;
     
 }
 .overlay-form{
     display: flex;
     flex-direction: column;
-    margin: 16px 0;
+}
+.wrapper-overlay-label {
+    margin-bottom: 8px;
 }
 .overlay-label{
-    display: flex;
-    flex-direction: column;
+    display: block;
 
-    font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
+
+    margin-bottom: 4px;
 }
-.overlay-label.checkbox {
-    flex-direction: row;
-    align-items: center;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.wrapper-overlay-input{
+    position: relative;
 }
 .overlay-input{
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     width: 100%;
     height: 40px;
-    background: #fcfcfc;
+    background-color: transparent;
     outline: transparent;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
-    padding: 14px 38px;
+    padding-left: 38px;
 }
-.overlay-input.textarea{
-    height: 120px;
-
-    margin-bottom: 0;
-    padding: 16px 8px;
-}
-.wrapper-overlay-input{
-    position: relative;
-    margin-top: 4px;
-        margin-bottom: 8px;
-}
-.overlay-social-icon{
+.overlay-social-icon {
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     fill: #2e2f42;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-icon{
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    fill: #2e2f42;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.overlay-input:focus {
+    border-color: #4d5ae5;
 }
-.overlay-input:focus{
-    border-color:#4d5ae5;
-}
-.overlay-input:focus + .overlay-social-icon{
+
+.overlay-input:focus+.overlay-social-icon {
     fill: #4d5ae5;
 }
-.overlay-checkbox{
-    margin-right: 8px;
-   accent-color: #4d5ae5;
+.wrapper-overlay-textarea{
+    margin-bottom: 16px;
+}
+.overlay-input.textarea{
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+        resize: none;
+
+    padding: 8px 16px;
+}
+.wrapper-overlay-checkbox{
+    margin-bottom: 24px;
+}
+.overlay-label-checkbox {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+.overlay-checkbox-span{
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    cursor: pointer;
 }
 .overlay-link{
-    line-height: 1.33333;
+    line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
 }
+input[type='checkbox']:checked + .overlay-label-checkbox .overlay-checkbox-span{
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
+}
 .btn.overlay-btn{
-    margin-top: 24px;
+    margin-top: 0px;
 }
-.btn-overlay-close:hover + .close-icon,
-.btn-overlay-close:focus + .close-icon {
-    fill: #fff;
-}
-.wrapper-btn-overlay{
-    position: absolute;
-        top: 24px;
-        right: 24px;
-}
-
-
-
 
 .footer-input{
     font-size: 12px;
@@ -598,12 +633,13 @@ background-color: #404bbf;
     
     border: 1px solid #fff;
     border-radius: 4px;
-    width: 264px;
+    min-width: 165px;
     height: 40px;
-    background-color: #2e2f42;
+    background-color: transparent;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     outline: transparent;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 16px;
 }
 .footer-form{
         display: flex;
@@ -623,7 +659,6 @@ background-color: #404bbf;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 16px;
     border-radius: 4px;
     border: none;
     padding: 8px 24px;
@@ -633,4 +668,7 @@ background-color: #404bbf;
 .btn-footer:hover,
 .btn-footer:focus{
     background: #404BBF;
+}
+.subscribe-icon{
+    margin-left: 16px;
 }
