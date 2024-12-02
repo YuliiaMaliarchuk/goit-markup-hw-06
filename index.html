@@ -16,11 +16,16 @@
     <title>WebStudio</title>
 </head>
 <body>
-    <header class="header hide">
+    <header class="header">
         <div class="header-container container">
             <nav class="nav">
                 <a class="logo header-logo" href="./index.html">Web<span class="logo-header-part">Studio</span>
                 </a>
+                <button class="mobile-menu-button" type="button">
+                    <svg class="menu-icon" width="24" height="24">
+                        <use href="./images/icons.svg#icon-menu"></use>
+                    </svg>
+                </button>
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a class="nav-link active" href="./index.html">Studio</a>
@@ -414,7 +419,7 @@
         </div>
     </footer>
 
-    <div class="modal-overlay">
+    <div class="modal-overlay is-open">
         <div class="modal">
             
                 <button class="btn-overlay-close" type="button">
@@ -476,14 +481,75 @@
                                     <use href="./images/icons.svg#icon-click"></use>
                                 </svg>
                             </span>
-                            I accept the terms and conditions of the
-                            <a class="overlay-link" href="/">Privacy Policy</a>
+                            <div class="wrapper-overlay-accept">
+                                I accept the terms and conditions of the
+                                <a class="overlay-link" href="/">Privacy Policy</a>
+                            </div>
                         </label>
                     </div>
 
                     <button class="btn overlay-btn" type="submit">Send</button>
             </form>
         </div>
+    </div>
+
+    <div class="mobile-menu">
+        <button class="btn-close-mobile-menu btn-overlay-close" type="button">
+            <svg class="close-icon" width="8" height="8">
+                <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+            </svg>
+        </button>
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <a class="mobile-menu-link" href="">Studio</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a class="mobile-menu-link" href="">Portfolio</a>
+            </li>
+            <li class="mobile-menu-item">
+                <a class="mobile-menu-link" href="">Contacts</a>
+            </li>
+        </ul>
+
+        <ul class="mobile-menu-contacts-list">
+            <li class="mobile-menu-contacts-item">
+                <a class="mobile-menu-contacts-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+            </li>
+            <li class="mobile-menu-contacts-item">
+                <a class="mobile-menu-contacts-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+            </li>
+        </ul>
+
+        <ul class="mobile-menu-socials socials">
+            <li class="social-item">
+                <a class="social-link" href="/">
+                    <svg class="social-icon" width="16" height="16">
+                        <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="/">
+                    <svg class="social-icon" width="16" height="16">
+                        <use href="./images/icons.svg#icon-twitter-1"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="/">
+                    <svg class="social-icon" width="16" height="16">
+                        <use href="./images/icons.svg#icon-facebook-1"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="/">
+                    <svg class="social-icon" width="16" height="16">
+                        <use href="./images/icons.svg#icon-linkedin-1"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
