@@ -39,9 +39,8 @@ img {
 /* mobile */
 .container {
     max-width: 320px;
-    padding: 0 20px;
+    padding: 0 16px;
     margin: 0 auto;
-    overflow: hidden;
 }
 /* tablet */
 @media only screen and (min-width: 768px){
@@ -174,7 +173,7 @@ img {
 }
 @media only screen and (min-width: 1158px) {
     .nav {
-        margin-right: 76px;
+        margin-right: 332px;
     }
 }
 .logo {
@@ -299,6 +298,7 @@ img {
 
 /* #region hero */
 .hero-section{
+    max-width: 320px;
     padding: 72px 0 72px;
     background: #2e2f42;
     background-image: 
@@ -326,6 +326,7 @@ img {
 }
 @media only screen and (min-width: 768px) {
   .hero-section {
+    max-width: 768px;
     padding: 112px 0 112px;
     background-image:
         linear-gradient(to bottom,
@@ -335,7 +336,7 @@ img {
     
   }
 }
-@media only screen and (min-width: 768px) and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+@media only screen and (min-width: 768px) and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
     .hero-section {
         background-image:
             linear-gradient(to bottom,
@@ -347,6 +348,7 @@ img {
 }
 @media only screen and (min-width: 1158px) {
     .hero-section {
+        max-width: 1440px;
         padding: 188px 0 188px;
         background-image:
             linear-gradient(to bottom,
@@ -355,7 +357,7 @@ img {
             url(../images/hero/hero_desktop@1x.jpg);
     }
 }
-@media only screen and (min-width: 1158px) and (min-resolution: 192dpi),
+@media only screen and (min-width: 1158px) and (min-resolution: 192dpi) and
 (min-resolution: 2dppx) {
     .hero-section {
         background-image:
@@ -627,11 +629,13 @@ img {
 }
 
 @media only screen and not (hover: hover) {
-        .portfolio-item:active .description-card{
+        .portfolio-item:active .description-card,
+        .portfolio-item:focus .description-card{
                 transform: translateY(0%);
             }
         
-            .portfolio-item:active {
+            .portfolio-item:active,
+            .portfolio-item:focus{
                 box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
             }
 }
@@ -666,6 +670,11 @@ img {
 .footer-logo {
     justify-content: center;
     margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .footer-logo {
+    justify-content: start;
+  }
 }
 .logo-footer-part {
     color: #f4f4fd;
@@ -771,13 +780,18 @@ img {
 
     border: 1px solid #fff;
     border-radius: 4px;
-    width: 264px;
+    width: 288px;
     height: 40px;
     background-color: transparent;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     outline: transparent;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding-left: 16px;
+}
+@media only screen and (min-width: 768px) {
+    .footer-input{
+        width: 264px;
+  }
 }
 .footer-input::placeholder {
     color: #fff;
@@ -1055,11 +1069,14 @@ input[type='checkbox']:checked + .overlay-label-checkbox .overlay-checkbox-span{
     display: flex;
     flex-direction: column;
 
-    padding: 72px 16px 40px;
-
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
     transform: translateX(100%);
+}
+@media only screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
 }
 .mobile-menu.is-open{
     transform: translateX(0);
@@ -1069,11 +1086,19 @@ input[type='checkbox']:checked + .overlay-label-checkbox .overlay-checkbox-span{
     border: 1px solid rgba(0, 0, 0, 0.1);
     stroke: #2e2f42;
 }
+.mobile-menu-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.mobile-menu-nav{
+margin-top: 72px;
+margin-bottom: auto;
+}
 .mobile-menu-list{
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: auto;
 }
 .mobile-menu-item {}
 .mobile-menu-link{
@@ -1084,18 +1109,20 @@ input[type='checkbox']:checked + .overlay-label-checkbox .overlay-checkbox-span{
     color: #2e2f42;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-menu-link:active{
+.mobile-menu-link.active{
     color: #404bbf;
 }
 .mobile-menu-socials{
     margin: 0;
     gap: 40px;
 }
+.mobile-menu-address{
+    margin-bottom: 48px;
+}
 .mobile-menu-contacts-list {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 48px;
 }
 
 .mobile-menu-contacts-item {}
@@ -1107,7 +1134,12 @@ input[type='checkbox']:checked + .overlay-label-checkbox .overlay-checkbox-span{
     letter-spacing: 0.02em;
     color: #434455;
 }
-.mobile-menu-contacts-link:active{
+.mobile-menu-contacts-link.active{
     color: #4d5ae5;
+}
+.mobile-menu-socials{
+    justify-content: start;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 /* endregion */
